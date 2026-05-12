@@ -63,12 +63,12 @@ export interface Summary {
 
 // API 函数
 export const fetchAllDays = async (): Promise<StudyDay[]> => {
-    const response = await api.get("/api/days");
+    const response = await api.get("/days");
     return response.data;
 };
 
 export const fetchDayById = async (id: number): Promise<StudyDay> => {
-    const response = await api.get(`/api/day/${id}`);
+    const response = await api.get(`/day/${id}`);
     return response.data;
 };
 
@@ -76,17 +76,17 @@ export const updateDay = async (
     id: number,
     data: StudyDayUpdate
 ): Promise<StudyDay> => {
-    const response = await api.post(`/api/day/${id}`, data);
+    const response = await api.post(`/day/${id}`, data);
     return response.data;
 };
 
 export const fetchSummary = async (): Promise<Summary> => {
-    const response = await api.get("/api/summary");
+    const response = await api.get("/summary");
     return response.data;
 };
 
 export const resetAllData = async (): Promise<{ message: string; success: boolean }> => {
-    const response = await api.post("/api/reset");
+    const response = await api.post("/reset");
     return response.data;
 };
 
